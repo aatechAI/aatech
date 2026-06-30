@@ -41,7 +41,11 @@ jobs:
         run: touch out/.nojekyll
 
       - name: Setup Pages
+        # enablement: true turns Pages on AND sets the source to "GitHub Actions"
+        # automatically, so no manual Settings → Pages step is required.
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
