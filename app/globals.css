@@ -217,6 +217,69 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav__link:hover::after { transform: scaleX(1); }
 .nav__cta { margin-left: 8px; }
 
+/* ---------- Header actions + language switcher ---------- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.nav + .header__actions { margin-left: 20px; }
+.lang { position: relative; }
+.lang__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  color: var(--navy);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.lang__btn:hover { border-color: var(--brand); }
+.lang__btn > svg { width: 16px; height: 16px; color: var(--brand); }
+.lang__caret { width: 14px !important; height: 14px !important; color: var(--text-dim) !important; }
+.lang__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  min-width: 160px;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: var(--shadow);
+  z-index: 60;
+}
+.lang__item {
+  display: block;
+  width: 100%;
+  text-align: start;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.lang__item:hover { background: var(--surface-2); color: var(--navy); }
+.lang__item.is-active { color: var(--brand); }
+
+/* ---------- RTL adjustments ---------- */
+[dir="rtl"] .nav__link::after { transform-origin: right; }
+[dir="rtl"] .marquee { direction: ltr; } /* keep brand chips scrolling naturally */
+[dir="rtl"] .step__num,
+[dir="rtl"] .stat__value,
+[dir="rtl"] .kpi__value { direction: ltr; unicode-bidi: plaintext; }
+
 /* ---------- Logo ---------- */
 .brand { display: inline-flex; align-items: center; }
 .logo__img { height: 38px; width: auto; }
