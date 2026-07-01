@@ -34,7 +34,7 @@ Every push to `main` builds the site and publishes it to GitHub Pages via
    At your domain registrar add DNS records pointing to GitHub Pages:
    - Four `A` records for the apex `aatech.pk` →
      `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - One `CNAME` record for `www` → `aliarsalan177.github.io`
+   - One `CNAME` record for `www` → `aatechAI.github.io`
    Then in **Settings → Pages** confirm the custom domain is `aatech.pk` and
    tick **Enforce HTTPS** (available once DNS propagates).
 
