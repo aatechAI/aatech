@@ -74,8 +74,8 @@ const WHY = [
     desc: "We bake AI and automated workflows into everything we build, so your systems work smarter and run themselves.",
   },
   {
-    title: "Local in Pakistan, delivering worldwide",
-    desc: "We work with clients both locally and internationally, across time zones, with clear and reliable communication.",
+    title: "A global player in tech",
+    desc: "We partner with clients worldwide, across every time zone, with clear and reliable communication around the clock.",
   },
   {
     title: "Senior engineers who own the outcome",
@@ -127,9 +127,6 @@ const KPIS = [
 const CHART = [40, 52, 48, 63, 58, 72, 80, 76, 92, 88, 100, 95];
 
 const EMAIL = "info@aatech.pk";
-const PHONE_DISPLAY = "+92 303 2455033";
-const PHONE_RAW = "+923032455033";
-const WHATSAPP = "923032455033";
 
 export default function Home() {
   return (
@@ -174,11 +171,11 @@ export default function Home() {
               <span className="grad">moves your business forward</span>
             </h1>
             <p className="hero__sub reveal" style={{ transitionDelay: "160ms" }}>
-              AATech is a software house with 8+ years building end-to-end
-              e-commerce and custom platforms — development, integration,
-              automation, reporting and big data, supercharged with AI. We
-              serve clients locally in Pakistan and internationally, with the
-              expertise to solve every kind of technical problem.
+              AATech is a global software house with 8+ years building
+              end-to-end e-commerce and custom platforms — development,
+              integration, automation, reporting and big data, supercharged
+              with AI. We partner with clients worldwide, with the expertise to
+              solve every kind of technical problem.
             </p>
             <div className="hero__actions reveal" style={{ transitionDelay: "240ms" }}>
               <a href="#contact" className="btn btn--primary btn--shine">
@@ -403,24 +400,70 @@ export default function Home() {
               <h2 className="cta__title">Have a project in mind? Let&apos;s build it.</h2>
               <p className="cta__sub">
                 Tell us what you&apos;re working on and we&apos;ll get back to you within
-                one business day with next steps.
+                one business day.
               </p>
-              <div className="cta__actions">
-                <a href={`mailto:${EMAIL}`} className="btn btn--primary btn--shine">Email us</a>
-                <a
-                  href={`https://wa.me/${WHATSAPP}`}
-                  className="btn btn--ghost"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Chat on WhatsApp
-                </a>
-              </div>
-              <div className="cta__contacts">
-                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                <span aria-hidden="true">•</span>
-                <a href={`tel:${PHONE_RAW}`}>{PHONE_DISPLAY}</a>
-              </div>
+
+              <form
+                className="cform"
+                action={`https://formsubmit.co/${EMAIL}`}
+                method="POST"
+              >
+                {/* FormSubmit settings */}
+                <input type="hidden" name="_subject" value="New enquiry from aatech.pk" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://aatech.pk/#contact" />
+                {/* Honeypot — bots fill this, humans never see it */}
+                <input
+                  type="text"
+                  name="_honey"
+                  className="cform__honey"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
+                <div className="cform__row">
+                  <input
+                    className="cform__input"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    aria-label="Your name"
+                    required
+                  />
+                  <input
+                    className="cform__input"
+                    type="email"
+                    name="email"
+                    placeholder="Email address"
+                    aria-label="Email address"
+                    required
+                  />
+                </div>
+                <input
+                  className="cform__input"
+                  type="text"
+                  name="company"
+                  placeholder="Company (optional)"
+                  aria-label="Company"
+                />
+                <textarea
+                  className="cform__input cform__textarea"
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us about your project"
+                  aria-label="Project details"
+                  required
+                />
+                <button type="submit" className="btn btn--primary btn--shine cform__submit">
+                  Send message
+                </button>
+              </form>
+
+              <p className="cta__contacts">
+                Prefer email? <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+              </p>
             </div>
           </div>
         </section>
@@ -432,8 +475,8 @@ export default function Home() {
           <div className="footer__brand">
             <Logo />
             <p className="footer__tag">
-              Engineering reliable software for businesses in Pakistan and
-              around the world.
+              A global software house engineering reliable, AI-powered software
+              for businesses around the world.
             </p>
           </div>
           <nav className="footer__nav" aria-label="Footer">
@@ -443,7 +486,7 @@ export default function Home() {
           </nav>
           <div className="footer__contact">
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-            <a href={`tel:${PHONE_RAW}`}>{PHONE_DISPLAY}</a>
+            <a href="#contact">Start a project</a>
           </div>
         </div>
         <div className="container footer__bottom">
@@ -463,8 +506,8 @@ export default function Home() {
             url: "https://aatech.pk",
             email: EMAIL,
             description:
-              "AATech is an IT and software development company building custom web, mobile and cloud solutions.",
-            address: { "@type": "PostalAddress", addressCountry: "PK" },
+              "AATech is a global software development company building AI-powered web, mobile, e-commerce and cloud solutions.",
+            areaServed: "Worldwide",
             sameAs: [],
           }),
         }}

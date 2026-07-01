@@ -5,16 +5,17 @@ const SITE_URL = "https://aatech.pk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "AATech — IT & Software Development Company in Pakistan",
+  title: "AATech — Global AI & Software Development Company",
   description:
-    "AATech builds custom software, web & mobile apps, cloud solutions and IT consulting that help businesses grow. Based in Pakistan, delivering worldwide.",
+    "AATech is a global software house building AI-powered software, e-commerce, automation, reporting and big-data solutions. Delivering to clients worldwide.",
   keywords: [
     "AATech",
-    "software development Pakistan",
+    "AI software development",
+    "e-commerce development",
+    "business automation",
     "web development",
     "mobile app development",
-    "IT consulting",
-    "cloud solutions",
+    "big data analytics",
     "custom software",
   ],
   authors: [{ name: "AATech" }],

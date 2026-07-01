@@ -444,7 +444,49 @@ ul { margin: 0; padding: 0; list-style: none; }
   flex-wrap: wrap;
   position: relative;
 }
-.cta__contacts a:hover { color: #fff; }
+.cta__contacts a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.cta__contacts a:hover { color: var(--accent); }
+
+/* ---- Contact form ---- */
+.cform {
+  position: relative;
+  max-width: 560px;
+  margin: 6px auto 22px;
+  text-align: left;
+}
+.cform__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.cform__input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: inherit;
+  margin-bottom: 12px;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.cform__row .cform__input { margin-bottom: 0; }
+.cform__input::placeholder { color: #9fb3d4; }
+.cform__input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+.cform__textarea { resize: vertical; min-height: 120px; }
+.cform__submit { width: 100%; margin-top: 4px; }
+.cform__honey {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
 
 /* ---------- Footer ---------- */
 .footer {
@@ -734,6 +776,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .logo__img { height: 32px; }
   .blob { opacity: 0.4; }
   .dash__kpis { grid-template-columns: repeat(2, 1fr); }
+  .cform__row { grid-template-columns: 1fr; gap: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
