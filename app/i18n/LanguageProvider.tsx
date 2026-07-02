@@ -5,6 +5,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import { LANGUAGES, LocaleCode, dict, Dict } from "./translations";
@@ -76,10 +77,28 @@ export function useLang() {
 export function LanguageSwitcher() {
   const { locale, setLocale } = useLang();
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const current = LANGUAGES.find((l) => l.code === locale);
 
+  // Close when clicking outside or pressing Escape.
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
-    <div className="lang" onMouseLeave={() => setOpen(false)}>
+    <div className="lang" ref={ref}>
       <button
         type="button"
         className="lang__btn"
