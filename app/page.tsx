@@ -371,14 +371,58 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "AATech",
-            url: "https://aatech.pk",
-            email: EMAIL,
-            description:
-              "AATech is a global software development company building AI-powered web, mobile, e-commerce and cloud solutions.",
-            areaServed: "Worldwide",
-            sameAs: [],
+            "@graph": [
+              {
+                "@type": ["Organization", "ProfessionalService"],
+                "@id": "https://aatech.pk/#organization",
+                name: "AATech",
+                alternateName: "AATech.pk",
+                url: "https://aatech.pk",
+                logo: "https://aatech.pk/logo.png",
+                image: "https://aatech.pk/logo.png",
+                email: EMAIL,
+                slogan: "We build AI-powered software that moves your business forward",
+                description:
+                  "AATech is a global software house with 10+ years building AI-powered software, e-commerce, business automation, reporting and big-data solutions for clients worldwide.",
+                foundingDate: "2014",
+                areaServed: "Worldwide",
+                knowsAbout: [
+                  "Artificial Intelligence",
+                  "E-commerce Development",
+                  "Shopify",
+                  "Magento",
+                  "WooCommerce",
+                  "Business Process Automation",
+                  "Systems Integration",
+                  "Big Data Analytics",
+                  "Business Intelligence",
+                  "Cloud & DevOps",
+                  "Mobile App Development",
+                ],
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  contactType: "customer support",
+                  email: EMAIL,
+                  availableLanguage: [
+                    "English",
+                    "Arabic",
+                    "German",
+                    "Greek",
+                    "French",
+                    "Spanish",
+                  ],
+                },
+                sameAs: [],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://aatech.pk/#website",
+                url: "https://aatech.pk",
+                name: "AATech",
+                publisher: { "@id": "https://aatech.pk/#organization" },
+                inLanguage: ["en", "ar", "de", "el", "fr", "es"],
+              },
+            ],
           }),
         }}
       />
