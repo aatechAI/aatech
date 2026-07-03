@@ -5,6 +5,7 @@ import { LanguageProvider } from "./i18n/LanguageProvider";
 
 const SITE_URL = "https://aatech.pk";
 const GA_ID = "G-QFZX6LZJ6Z"; // Google Analytics 4 measurement ID
+const GTM_ID = "GTM-WJPMSK56"; // Google Tag Manager container ID
 
 const TITLE = "AATech — Global AI & Software Development Company";
 const DESCRIPTION =
@@ -99,7 +100,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* Google Tag Manager (noscript) — must be first in body */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="gtm"
+          />
+        </noscript>
+
         <LanguageProvider>{children}</LanguageProvider>
+
+        {/* Google Tag Manager */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
 
         {/* Google Analytics (gtag.js) */}
         <Script
