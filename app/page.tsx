@@ -17,6 +17,12 @@ const SERVICE_ICONS = [
   "M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm0 14h18M9 21h6",
   "M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm4 18h2",
   "M12 3a8 8 0 0 0-8 8c0 3 2 5 4 6h8c2-1 4-3 4-6a8 8 0 0 0-8-8Zm-4 17h8",
+  "M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5.5 12.5L21 21M8.5 12v2m3-4v4m3-5v5",
+  "M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm0 2 8 5.5L20 8",
+  "m14 4 6 6M4 20l1.5-5L16 4.5l3.5 3.5L9 18.5 4 20Z",
+  "M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.4-.4-.8-.4-1.1 0-1 .8-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Zm-4.5 9a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm3-4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm5 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z",
+  "M3 4h18l-7 8v6l-4 2v-8L3 4Z",
+  "M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6l8-3Zm-3.2 9 2.2 2.2 4.2-4.2",
 ];
 
 const STAT_META = [
@@ -398,6 +404,12 @@ export default function Home() {
                   "Business Intelligence",
                   "Cloud & DevOps",
                   "Mobile App Development",
+                  "SEO",
+                  "Digital Marketing",
+                  "Email Marketing",
+                  "UI/UX Design",
+                  "Branding",
+                  "Conversion Rate Optimization",
                 ],
                 contactPoint: {
                   "@type": "ContactPoint",
